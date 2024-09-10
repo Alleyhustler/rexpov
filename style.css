@@ -1,0 +1,109 @@
+/* style.css */
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#povContainer {
+    position: relative;
+    width: 100vw;
+    height: 120vh;
+    overflow: hidden;
+}
+
+#backgroundCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#leftArm, #rightArm {
+    position: absolute;
+    bottom: 10%;
+    width: 20vw;
+    z-index: 2;
+}
+
+#leftArm {
+    left: 10%;
+}
+
+#rightArm {
+    right: 10%;
+}
+
+/* Social Media Icons */
+#socialMediaIcons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 3; /* Make sure it's on top of everything else */
+}
+
+.social-icon {
+    width: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.7)); /* Add glowing effect */
+}
+
+/* Title and Subtitle Styling */
+#titleContainer {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 3;
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 4vw;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #E5F1FB;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8), 0px 0px 10px rgba(173, 216, 230, 0.5);
+    animation: titleAppear 2s ease-out forwards;
+}
+
+.subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1vw;
+    color: #DCEBF7;
+    opacity: 0;
+    margin-top: 10px;
+    animation: subtitleAppear 3s ease-out forwards;
+}
+
+@keyframes titleAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes subtitleAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
